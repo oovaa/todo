@@ -1,4 +1,9 @@
 import mongoose from 'mongoose';
+import {
+  Validate_user_email,
+  Validate_user_name,
+  Validate_user_pass
+} from '../validation';
 
 const userSchema = new mongoose.Schema(
   {
@@ -22,5 +27,16 @@ userSchema.statics.findbyemail = function (email) {
 userSchema.statics.findbyusername = function (user_name) {
   return this.find({ user_name: new RegExp(user_name, 'i') });
 };
+
+userSchema.pre('save', function (next) {
+  try {
+    Validate_user_name(this.user_name);
+    Validate_user_pass(this.user_pass);
+    Validate_user_email(this.user_email);
+    next(e);
+  } catch (e) {
+    console.log(e);
+  }
+});
 
 export { DB_User };

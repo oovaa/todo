@@ -2,9 +2,9 @@
 
 ## Plan
 
-The application will consist of several routes including login, about me, and main pages.
+The application will consist of several routes including sign-in, sign-up, about me, and main pages.
 
-- **Login**: This will consist of two pages - login and register. A user authentication and password reset system will be implemented via email.
+- **Sign-in/Sign-up**: These will consist of two pages - sign-in and sign-up. A user authentication and password reset system will be implemented via email.
 
 - **Main**: This will be a basic todo app where users can add, view, remove, and edit tasks. Additionally, a chat page with an AI will be added. The AI will be aware of the user's tasks, providing a more interactive experience.
 
@@ -19,11 +19,11 @@ In the future, I plan to add a dedicated site for the AI bot chat. This AI will 
 
 The following technologies will be used to build this application:
 
-- **Bun**: a fast modren all in one js runtime.
+- **Bun**: a fast modern all in one js runtime.
 
-- **Vite**: A build tool that aims to provide a faster and leaner development experience for modern web projects.
 - **React**: A JavaScript library for building user interfaces.
 - **Next.js**: A React framework for building JavaScript applications.
 - **FeathersJs**: An open source web framework for building real time applications.
+- **Mongoose**: An Object Data Modeling (ODM) library for MongoDB and Node.js.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 - **MongoDB**: A source-available cross-platform document-oriented database program.
