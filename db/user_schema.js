@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 ); // Enable timestamps
 
-const User = mongoose.model('User', userSchema);
+const DB_User = mongoose.model('User', userSchema);
 
 userSchema.statics.findbyemail = function (email) {
   return this.find({ email: new RegExp(email, 'i') });
@@ -23,4 +23,4 @@ userSchema.statics.findbyusername = function (user_name) {
   return this.find({ user_name: new RegExp(user_name, 'i') });
 };
 
-export { User };
+export { DB_User };
