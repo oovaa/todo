@@ -9,7 +9,7 @@ const taskSchema = mongoose.Schema(
       }
     },
     number: { type: Number },
-    content: { type: String },
+    content: { type: String, default: 'new task' },
     done: { type: Boolean, default: false },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   },

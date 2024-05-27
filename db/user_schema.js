@@ -19,8 +19,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 ); // Enable timestamps
 
-const DB_User = mongoose.model('User', userSchema);
-
 userSchema.statics.findbyemail = function (email) {
   return this.find({ email: new RegExp(email, 'i') });
 };
@@ -33,10 +31,14 @@ userSchema.pre('save', function (next) {
     Validate_user_name(this.user_name);
     Validate_user_pass(this.user_pass);
     Validate_user_email(this.user_email);
-    next(e);
+    next();
   } catch (e) {
     console.log(e);
+    next(e);
+
   }
 });
+
+const DB_User = mongoose.model('User', userSchema);
 
 export { DB_User };
